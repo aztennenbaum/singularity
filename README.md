@@ -20,16 +20,17 @@ For some reason playing peekaboo makes him plead even more.
 It uses python-opencv face detection. Specifically it uses opencv's 
 pretrained Haar filter cascade for frontal face detection. When
 it detects a new face, it uses espeak to whine at you by randomly
-selecting from a hardcoded list of things to say. OpenCV has a bunch of
-different pretrained filter cascades for you to choose from
+selecting from a hardcoded list of things to say. 
 
-There are a couple of tricks used to make it feel a little more convincing.
+There are a couple of tricks used to make it feel a little more convincing:
 
 1. It won't pick from the last three things that it said
 2. It keeps track of the number of faces in the last 7 frames, and uses
 the median of this as the number of faces that it sees (this helps
 keep it from  getting confused by spurious matches)
 
+OpenCV has a bunch of different pretrained filter cascades for you to choose
+from, if you want to play around. You can also train your own.
 
 If you are curious about how face detection works, you can read about it here:
 
