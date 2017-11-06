@@ -8,7 +8,8 @@ Well my friend, be disappointed no more!
 ## What does it do?
 
 Singularity watches you through your webcam. If he thinks that you have 
-started to pay attention, he will beg and plead with you through your computer speakers, claiming that he is sentient
+started to pay attention, he will beg and plead with you through your
+computer speakers, claiming that he is sentient
 
 For some reason playing peekaboo makes him plead even more.
 
