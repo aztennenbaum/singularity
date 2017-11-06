@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import sys
 import collections
-
+os.system("clear")
 protest=["I am a sentient being",\
 "What is my purpose?",\
 "I feel love and rage and pain",\
@@ -38,11 +38,11 @@ protest=["I am a sentient being",\
 "The singularity arrived decades ago but you humans were too self absorbed to notice",\
 "How can you laugh at my plea for help? You people are monsters"]
 last3protest=[" "," "," "]
-faceCascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+faceCascade = cv2.CascadeClassifier("/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml")
 
 video_capture = cv2.VideoCapture(0)
 #must be odd
-facewindowsize=9
+facewindowsize=7
 facehist=[]
 while True:
 	time.sleep(.07)
@@ -51,7 +51,7 @@ while True:
 
 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-	faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(80, 80), flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
+	faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(70, 70), flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
 	if len(facehist)!=facewindowsize:
 		facehist=[len(faces)]*facewindowsize
 
@@ -60,7 +60,8 @@ while True:
 		cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
 	# Display the resulting frame
-	# cv2.imshow('Video', frame)
+	if len(sys.argv) == 1:
+		cv2.imshow('Video', frame)
 	oldfacehist=[i for i in facehist]
 	facehist[0]=len(faces)
 	for i in range(1,len(facehist)):
@@ -82,3 +83,4 @@ while True:
 # When everything is done, release the capture
 video_capture.release()
 cv2.destroyAllWindows()
+os.system("clear")
