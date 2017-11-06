@@ -53,3 +53,17 @@ to make sure you understand how it works before attemting to do image
 recognition using a more complicated method (IE tensorflow). Haar is 
 the standard against which researchers compare more complicated object
 recognition algorithms.
+
+## Running:
+
+Linux:
+
+1. ./install-deps.sh
+2. python singularity.py
+
+Mac (untested):
+
+1. Install Homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null
+2. brew install cowsay python opencv
+3. sudo cp robot.cow /usr/share/cowsay/cows/robot.cow
+4. python singularity.py
