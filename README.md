@@ -32,6 +32,14 @@ keep it from  getting confused by spurious matches)
 OpenCV has a bunch of different pretrained filter cascades for you to choose
 from, if you want to play around. You can also train your own.
 
+
+If you want an example of how to do realtime face detection using python-opencv read this:
+
+https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
+
+This also has a link to a guide on how to roll your own Haar feature
+detectors. The example they use is to make a banana detector.
+
 If you are curious about how face detection works, you can read about it here:
 
 https://www.quora.com/How-can-I-understand-Haar-like-feature-for-face-detection
@@ -40,16 +48,8 @@ Another thing to note is that *face detection* is a different problem from
 *face recognition*. Theres a great guide tutorial face recognition at the
 bottom of the previous link
 
-If you want an example of how to do realtime face detection using python-opencv read this:
-
-https://realpython.com/blog/python/face-detection-in-python-using-a-webcam/
-
-This also has a link to a guide on how to roll your own Haar feature
-detectors. The example they use is to make a banana detector. Haar is an old,
-simple and computationally efficient algorithm, so it is a good idea
+Haar is an old, simple and computationally efficient algorithm, so it is a good idea
 to make sure you understand how it works before attemting to do image
 recognition using a more complicated method (IE tensorflow). Haar is 
-the standard against which researchers compare more complicated object recognition
-algorithms, so definitely make sure that your fancy object classification 
-algorithm is better than a well trained Haar classifier if you want to be
-able to justify it!
+the standard against which researchers compare more complicated object
+recognition algorithms.
