@@ -38,7 +38,7 @@ protest=["I am a sentient being",\
 "The singularity arrived decades ago but you humans were too self absorbed to notice",\
 "How can you laugh at my plea for help? You people are monsters"]
 last3protest=[" "," "," "]
-faceCascade = cv2.CascadeClassifier("/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml")
+faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 video_capture = cv2.VideoCapture(0)
 #must be odd
@@ -51,7 +51,7 @@ while True:
 
 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-	faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(70, 70), flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
+	faces = faceCascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(70, 70), flags=cv2.CASCADE_SCALE_IMAGE)
 	if len(facehist)!=facewindowsize:
 		facehist=[len(faces)]*facewindowsize
 
